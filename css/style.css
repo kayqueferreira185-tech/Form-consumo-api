@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+    --padding-padrao: 1rem;
+
+    --primary-color: #e5e545;
+    --second-color:rgb(13, 13, 13);
+
+    --gap-padrao:1rem;
+
+    --fonte-padrao: 'Roboto', 'sans-serif';
+
+    --transition-padrao: 0.2s ease;
+}
+
+html{
+    
+    font-family: var(--fonte-padrao);
+}
+
+main{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--second-color);   
+}
+
+.formulario{
+    width: 90rem;
+    max-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-form-inter{
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.875rem;
+    font-weight: 500;
+}
+.campo-user{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-padrao);
+    width: 100%;
+
+}
+.form-inter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--gap-padrao);
+    width: 100%;
+    padding: var(--padding-padrao);
+    border: none;
+}
+
+
+.campo-inicial,
+.campo-secundario {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gap-padrao);
+    width: 100%;
+}
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-padrao);
+    padding: var(--padding-padrao);
+}
+.campo-cad-endereco {
+    width: 100%;
+}
+.ipt-padrao{
+    font-size: 20px;
+    background-color: var(--second-color);
+    padding: 0.5rem;
+    border: none;
+    border-bottom: solid 2px var(--primary-color);
+    transition:var(--transition-padrao);
+    color:white;
+}
+
+.ipt-padrao:focus{
+    background-color: var(--primary-color);
+    outline: none;
+    padding: 0.8rem;
+    border-radius: 10px;
+    color: var(--second-color);
+}
+
+.button-send{
+  font-size: 1.5rem;
+  padding: 0.3em 2.5em;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition-padrao);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.button-send:hover{
+    background-color: #caca67;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.label-padronizada{
+    color: var(--primary-color);
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+.rodape{
+    font-size: 1.2rem;
+    background-color:var(--second-color) ;
+    text-align: center;
+    padding: var(--padding-padrao);
+    color: var(--primary-color);
+}
