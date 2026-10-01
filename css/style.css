@@ -89,7 +89,7 @@ main{
     transition:var(--transition-padrao);
     color:white;
 }
-
+.ipt-padrao:valid,
 .ipt-padrao:focus{
     background-color: var(--primary-color);
     outline: none;
@@ -97,6 +97,7 @@ main{
     border-radius: 10px;
     color: var(--second-color);
 }
+
 
 .button-send{
   font-size: 1.5rem;
