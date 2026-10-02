@@ -1,6 +1,10 @@
 
 const cep = document.querySelector('#cep');
 
+const erroCep = document.querySelector('#erro-cep');
+const mensagemerro = document.querySelector('#mensagem-erro');
+
+
 cep.addEventListener('focusout', async (e) =>{
    e.preventDefault();
    try{
@@ -8,7 +12,8 @@ cep.addEventListener('focusout', async (e) =>{
    console.log(dados);
    montaForm(dados);
     }catch(erro) {
-     alert('ocorreu um problema')
+    erroCep.style.display = 'flex';
+    mensagemerro.textContent = 'Tente novamente.';
    };
    async function BuscaDados(){
      const inputCEP =  document.getElementById('cep');
@@ -22,5 +27,6 @@ cep.addEventListener('focusout', async (e) =>{
    document.querySelector('#bairro').value = dados.bairro;
    document.querySelector('#city').value = dados.localidade;
    document.querySelector('#state').value =dados.uf;
+   erroCep.style.display = "none";
    }
 });

@@ -127,3 +127,21 @@ main{
     padding: var(--padding-padrao);
     color: var(--primary-color);
 }
+
+#erro-cep{
+  display: none;
+
+    #mensagem-erro{
+    color: red;
+    font-size: 16px;
+    padding: 0.5em; 
+   }
+   
+   .icone-erro{
+    background-color: rgb(221, 217, 217);
+    width: 16px;
+}
+}
+
+
+
