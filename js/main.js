@@ -2,24 +2,32 @@
 const cep = document.querySelector('#cep');
 
 const erroCep = document.querySelector('#erro-cep');
-const mensagemerro = document.querySelector('#mensagem-erro');
+const mensagemErro = document.querySelector('#mensagem-erro');
 
 
 cep.addEventListener('focusout', async (e) =>{
    e.preventDefault();
    try{
    const dados = await BuscaDados();
-   console.log(dados);
+
+   if(dados.erro === 'true'){
+      throw new Error('CEP não encontrado');
+   }
    montaForm(dados);
     }catch(erro) {
     erroCep.style.display = 'flex';
-    mensagemerro.textContent = 'Tente novamente.';
+    mensagemErro.textContent = erro.message;
    };
    async function BuscaDados(){
-     const inputCEP =  document.getElementById('cep');
-    const cepLimpo =  inputCEP.value.replace(/\D/g, '');
+    const cepLimpo =  cep.value.replace(/\D/g, '');
+    if(cepLimpo.length !== 8 ){
+      throw new Error('Digite um CEP válido.')
+    }
     const url =  `https://viacep.com.br/ws/${cepLimpo}/json/`;
     const resposta = await fetch(url);
+    if(!resposta.ok){
+      throw new Error('Tente novamente.')
+    }
     return resposta.json();
    }
    function montaForm(dados){
